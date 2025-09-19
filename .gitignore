@@ -1,0 +1,38 @@
+# Build output
+dist
+out-tsc
+.tmp
+.angular
+.nx/cache
+.nx/workspace-data
+
+# Dependencies
+node_modules
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+npm-debug.log*
+yarn-debug.log*
+coverage
+test-output
+connect.lock
+libpeerconnection.log
+
+# Env
+.env
+.env.*
+!*.env.example
+
+# Storybook / Vite
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
+libs/**/ui-components/.storybook/*.css

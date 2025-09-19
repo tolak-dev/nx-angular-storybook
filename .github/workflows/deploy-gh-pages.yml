@@ -1,0 +1,46 @@
+name: Deploy Demo App to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build demo app
+        run: |
+          npx nx build web-app --base-href /nx-angular-storybook/
+          cp dist/apps/web-app/browser/index.html dist/apps/web-app/browser/404.html
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist/apps/web-app/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Echo deployment URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"

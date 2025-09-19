@@ -1,0 +1,25 @@
+<header class="sticky top-0 z-50 bg-orange-600 backdrop-blur-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <a routerLink="/" class="text-2xl text-white">
+      NG + Storybook
+    </a>
+    <nav class="hidden md:flex flex-col text-sm items-center gap-4">
+      <lib-shared-menu-nav />
+    </nav>
+    <button
+      (click)="toggleMobileMenu()"
+      class="md:hidden text-white hover:text-orange-500 focus:outline-none p-2 rounded-lg hover:bg-white transition-colors duration-300 cursor-pointer">
+      <svg [class.hidden]="isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg [class.hidden]="!isMobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  <div [class.hidden]="!isMobileMenuOpen" class="md:hidden bg-yellow-500 backdrop-blur-lg shadow-lg">
+    <div class="px-4 py-6 space-y-4">
+      <lib-shared-menu-nav-mobile />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+<div class="relative isolate flex items-center min-h-screen bg-gradient-to-br from-orange-600 via-orange-550 to-orange-600 ">
+  <div class="mx-auto max-w-5xl">
+    <div class="relative isolate lg:flex items-center">
+      <div class="mx-auto text-center lg:mx-0 lg:flex-auto md:my-0">
+        <h2 class="text-5xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
+          {{ title }}
+        </h2>
+        <p class="mt-6 text-lg/8 text-pretty text-gray-300">
+          {{ description }}
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a [routerLink]="primaryCtaLink"
+            class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            {{ primaryCtaLabel }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

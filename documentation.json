@@ -1,0 +1,988 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "MockPageComponent",
+            "id": "component-MockPageComponent-46813ad5ab0ca6bb921cea68d5e543a2acbb383a329cbd1a478ca486cfe2b45155edb824bc3ab8f81ccfe651bd8d199ecb26b721812d38b5e6a58557bb2172a2",
+            "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div>Mock Page</div>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import type { Meta, StoryObj } from '@storybook/angular';\nimport { moduleMetadata, applicationConfig } from '@storybook/angular';\nimport { Component } from '@angular/core';\nimport { provideRouter } from '@angular/router';\nimport { provideLocationMocks } from '@angular/common/testing';\nimport { BannerComponent } from './banner.component';\n\n@Component({\n  template: '<div>Mock Page</div>',\n})\nclass MockPageComponent {}\n\nconst routes = [\n  { path: 'about', component: MockPageComponent },\n  { path: 'features', component: MockPageComponent },\n  { path: 'maintenance', component: MockPageComponent },\n  { path: 'pricing', component: MockPageComponent },\n  { path: 'security', component: MockPageComponent },\n  { path: 'announcements', component: MockPageComponent },\n  { path: 'beta', component: MockPageComponent },\n];\n\nconst meta: Meta<BannerComponent> = {\n  title: 'Components/Banner',\n  component: BannerComponent,\n  decorators: [\n    applicationConfig({\n      providers: [provideRouter(routes), provideLocationMocks()],\n    }),\n    moduleMetadata({\n      imports: [BannerComponent],\n    }),\n  ],\n  parameters: {\n    layout: 'fullscreen',\n    backgrounds: {\n      default: 'light',\n      values: [\n        { name: 'light', value: '#ffffff' },\n        { name: 'gray', value: '#f3f4f6' },\n        { name: 'dark', value: '#1f2937' },\n      ],\n    },\n  },\n  argTypes: {\n    title: { control: 'text' },\n    message: { control: 'text' },\n    ctaLabel: { control: 'text' },\n    ctaLink: { control: 'text' },\n  },\n  args: {\n    title: 'Demo Notice',\n    message:\n      'This site is a demo. Features and functionality are for preview purposes only.',\n    ctaLabel: 'Learn more',\n    ctaLink: '/about',\n  },\n};\n\nexport default meta;\ntype Story = StoryObj<BannerComponent>;\n\nexport const Default: Story = {};\n\nexport const FeatureAnnouncement: Story = {\n  args: {\n    title: 'New Feature Available',\n    message:\n      'Try our latest dashboard updates with enhanced analytics and reporting capabilities.',\n    ctaLabel: 'Explore now',\n    ctaLink: '/features',\n  },\n};\n\nexport const MaintenanceNotice: Story = {\n  args: {\n    title: 'Scheduled Maintenance',\n    message:\n      'Our services will be temporarily unavailable on Sunday from 2:00 AM to 4:00 AM EST.',\n    ctaLabel: 'View details',\n    ctaLink: '/maintenance',\n  },\n};\n\nexport const PromotionalBanner: Story = {\n  args: {\n    title: 'Limited Time Offer',\n    message:\n      'Get 50% off premium features for the next 7 days. Upgrade your account today!',\n    ctaLabel: 'Upgrade now',\n    ctaLink: '/pricing',\n  },\n};\n\nexport const SecurityAlert: Story = {\n  args: {\n    title: 'Security Update',\n    message:\n      'We recommend updating your password and enabling two-factor authentication.',\n    ctaLabel: 'Update settings',\n    ctaLink: '/security',\n  },\n};\n\nexport const DismissalBehavior: Story = {\n  parameters: {\n    docs: {\n      description: {\n        story: `\n**Testing Dismissal:**\n- Click the × button to dismiss the banner.\n- The banner disappears and stores dismissal time in localStorage.\n- Refresh the page - banner remains hidden for 24 hours.\n- Clear localStorage to reset the dismissal state.\n\n**Technical Details:**\n- Uses localStorage key: \\`demo-banner\\`\n- Expires after 24 hours (86,400,000 ms)\n- Automatically reappears after expiry time.\n        `,\n      },\n    },\n  },\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-gray-700',\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-blue-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-gray-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-gray-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "DismissalBehavior",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  parameters: {\n    docs: {\n      description: {\n        story: `\n**Testing Dismissal:**\n- Click the × button to dismiss the banner.\n- The banner disappears and stores dismissal time in localStorage.\n- Refresh the page - banner remains hidden for 24 hours.\n- Clear localStorage to reset the dismissal state.\n\n**Technical Details:**\n- Uses localStorage key: \\`demo-banner\\`\n- Expires after 24 hours (86,400,000 ms)\n- Automatically reappears after expiry time.\n        `,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "FeatureAnnouncement",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    title: 'New Feature Available',\n    message:\n      'Try our latest dashboard updates with enhanced analytics and reporting capabilities.',\n    ctaLabel: 'Explore now',\n    ctaLink: '/features',\n  },\n}"
+            },
+            {
+                "name": "LargeBlue",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-blue-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "LargePurple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "LargePurple",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "LargeRed",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-red-500',\r\n  },\r\n}"
+            },
+            {
+                "name": "MaintenanceNotice",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    title: 'Scheduled Maintenance',\n    message:\n      'Our services will be temporarily unavailable on Sunday from 2:00 AM to 4:00 AM EST.',\n    ctaLabel: 'View details',\n    ctaLink: '/maintenance',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BannerComponent>",
+                "defaultValue": "{\n  title: 'Components/Banner',\n  component: BannerComponent,\n  decorators: [\n    applicationConfig({\n      providers: [provideRouter(routes), provideLocationMocks()],\n    }),\n    moduleMetadata({\n      imports: [BannerComponent],\n    }),\n  ],\n  parameters: {\n    layout: 'fullscreen',\n    backgrounds: {\n      default: 'light',\n      values: [\n        { name: 'light', value: '#ffffff' },\n        { name: 'gray', value: '#f3f4f6' },\n        { name: 'dark', value: '#1f2937' },\n      ],\n    },\n  },\n  argTypes: {\n    title: { control: 'text' },\n    message: { control: 'text' },\n    ctaLabel: { control: 'text' },\n    ctaLink: { control: 'text' },\n  },\n  args: {\n    title: 'Demo Notice',\n    message:\n      'This site is a demo. Features and functionality are for preview purposes only.',\n    ctaLabel: 'Learn more',\n    ctaLink: '/about',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  title: 'Icons/AllIcons',\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    imports: [\r\n      TailwindIconComponent,\r\n      PublishIconComponent,\r\n      ReusableIconComponent,\r\n      StorybookIconComponent,\r\n    ],\r\n    template: `\r\n      <div class=\"grid grid-cols-4 gap-6 p-6 bg-gray-50 rounded-lg\">\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-tailwind-icon [size]=\"size\" [color]=\"color\"></lib-tailwind-icon>\r\n          <span class=\"text-xs\">Tailwind</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-storybook-icon [size]=\"size\" [color]=\"color\"></lib-storybook-icon>\r\n          <span class=\"text-xs\">Storybook</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-publish-icon [size]=\"size\" [color]=\"color\"></lib-publish-icon>\r\n          <span class=\"text-xs\">Publish</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-reusable-icon [size]=\"size\" [color]=\"color\"></lib-reusable-icon>\r\n          <span class=\"text-xs\">Reusable</span>\r\n        </div>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  title: 'Icons/StorybookIcon',\r\n  component: StorybookIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TailwindIconComponent>",
+                "defaultValue": "{\r\n  title: 'Icons/TailwindIcon',\r\n  component: TailwindIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  title: 'Icons/ReusableIcon',\r\n  component: ReusableIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PublishIconComponent>",
+                "defaultValue": "{\r\n  title: 'Icons/PublishIcon',\r\n  component: PublishIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n    docs: {\n      toc: true,\n    },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: '#ffffff',\n        },\n        {\n          name: 'dark',\n          value: '#333333',\n        },\n        {\n          name: 'gray',\n          value: '#f5f5f5',\n        },\n      ],\n    },\n  },\n  decorators: [\n    (story) => {\n      return story();\n    },\n  ],\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "PromotionalBanner",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    title: 'Limited Time Offer',\n    message:\n      'Get 50% off premium features for the next 7 days. Upgrade your account today!',\n    ctaLabel: 'Upgrade now',\n    ctaLink: '/pricing',\n  },\n}"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n  { path: 'about', component: MockPageComponent },\n  { path: 'features', component: MockPageComponent },\n  { path: 'maintenance', component: MockPageComponent },\n  { path: 'pricing', component: MockPageComponent },\n  { path: 'security', component: MockPageComponent },\n  { path: 'announcements', component: MockPageComponent },\n  { path: 'beta', component: MockPageComponent },\n]"
+            },
+            {
+                "name": "SecurityAlert",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    title: 'Security Update',\n    message:\n      'We recommend updating your password and enabling two-factor authentication.',\n    ctaLabel: 'Update settings',\n    ctaLink: '/security',\n  },\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<BannerComponent>",
+                "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj",
+                "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<StorybookIconComponent>",
+                "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TailwindIconComponent>",
+                "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ReusableIconComponent>",
+                "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<PublishIconComponent>",
+                "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "DismissalBehavior",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  parameters: {\n    docs: {\n      description: {\n        story: `\n**Testing Dismissal:**\n- Click the × button to dismiss the banner.\n- The banner disappears and stores dismissal time in localStorage.\n- Refresh the page - banner remains hidden for 24 hours.\n- Clear localStorage to reset the dismissal state.\n\n**Technical Details:**\n- Uses localStorage key: \\`demo-banner\\`\n- Expires after 24 hours (86,400,000 ms)\n- Automatically reappears after expiry time.\n        `,\n      },\n    },\n  },\n}"
+                },
+                {
+                    "name": "FeatureAnnouncement",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    title: 'New Feature Available',\n    message:\n      'Try our latest dashboard updates with enhanced analytics and reporting capabilities.',\n    ctaLabel: 'Explore now',\n    ctaLink: '/features',\n  },\n}"
+                },
+                {
+                    "name": "MaintenanceNotice",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    title: 'Scheduled Maintenance',\n    message:\n      'Our services will be temporarily unavailable on Sunday from 2:00 AM to 4:00 AM EST.',\n    ctaLabel: 'View details',\n    ctaLink: '/maintenance',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BannerComponent>",
+                    "defaultValue": "{\n  title: 'Components/Banner',\n  component: BannerComponent,\n  decorators: [\n    applicationConfig({\n      providers: [provideRouter(routes), provideLocationMocks()],\n    }),\n    moduleMetadata({\n      imports: [BannerComponent],\n    }),\n  ],\n  parameters: {\n    layout: 'fullscreen',\n    backgrounds: {\n      default: 'light',\n      values: [\n        { name: 'light', value: '#ffffff' },\n        { name: 'gray', value: '#f3f4f6' },\n        { name: 'dark', value: '#1f2937' },\n      ],\n    },\n  },\n  argTypes: {\n    title: { control: 'text' },\n    message: { control: 'text' },\n    ctaLabel: { control: 'text' },\n    ctaLink: { control: 'text' },\n  },\n  args: {\n    title: 'Demo Notice',\n    message:\n      'This site is a demo. Features and functionality are for preview purposes only.',\n    ctaLabel: 'Learn more',\n    ctaLink: '/about',\n  },\n}"
+                },
+                {
+                    "name": "PromotionalBanner",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    title: 'Limited Time Offer',\n    message:\n      'Get 50% off premium features for the next 7 days. Upgrade your account today!',\n    ctaLabel: 'Upgrade now',\n    ctaLink: '/pricing',\n  },\n}"
+                },
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  { path: 'about', component: MockPageComponent },\n  { path: 'features', component: MockPageComponent },\n  { path: 'maintenance', component: MockPageComponent },\n  { path: 'pricing', component: MockPageComponent },\n  { path: 'security', component: MockPageComponent },\n  { path: 'announcements', component: MockPageComponent },\n  { path: 'beta', component: MockPageComponent },\n]"
+                },
+                {
+                    "name": "SecurityAlert",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    title: 'Security Update',\n    message:\n      'We recommend updating your password and enabling two-factor authentication.',\n    ctaLabel: 'Update settings',\n    ctaLink: '/security',\n  },\n}"
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-gray-700',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\r\n  title: 'Icons/AllIcons',\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    imports: [\r\n      TailwindIconComponent,\r\n      PublishIconComponent,\r\n      ReusableIconComponent,\r\n      StorybookIconComponent,\r\n    ],\r\n    template: `\r\n      <div class=\"grid grid-cols-4 gap-6 p-6 bg-gray-50 rounded-lg\">\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-tailwind-icon [size]=\"size\" [color]=\"color\"></lib-tailwind-icon>\r\n          <span class=\"text-xs\">Tailwind</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-storybook-icon [size]=\"size\" [color]=\"color\"></lib-storybook-icon>\r\n          <span class=\"text-xs\">Storybook</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-publish-icon [size]=\"size\" [color]=\"color\"></lib-publish-icon>\r\n          <span class=\"text-xs\">Publish</span>\r\n        </div>\r\n        <div class=\"flex flex-col items-center gap-2\">\r\n          <lib-reusable-icon [size]=\"size\" [color]=\"color\"></lib-reusable-icon>\r\n          <span class=\"text-xs\">Reusable</span>\r\n        </div>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "LargePurple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\r\n  title: 'Icons/StorybookIcon',\r\n  component: StorybookIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-blue-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "LargePurple",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-purple-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TailwindIconComponent>",
+                    "defaultValue": "{\r\n  title: 'Icons/TailwindIcon',\r\n  component: TailwindIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-gray-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "LargeBlue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-blue-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\r\n  title: 'Icons/ReusableIcon',\r\n  component: ReusableIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-6 w-6',\r\n    color: 'text-gray-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "LargeRed",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size: 'h-10 w-10',\r\n    color: 'text-red-500',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PublishIconComponent>",
+                    "defaultValue": "{\r\n  title: 'Icons/PublishIcon',\r\n  component: PublishIconComponent,\r\n  argTypes: {\r\n    size: { control: 'text' },\r\n    color: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "libs/shared/ui-components/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/shared/ui-components/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n    docs: {\n      toc: true,\n    },\n    backgrounds: {\n      default: 'light',\n      values: [\n        {\n          name: 'light',\n          value: '#ffffff',\n        },\n        {\n          name: 'dark',\n          value: '#333333',\n        },\n        {\n          name: 'gray',\n          value: '#f5f5f5',\n        },\n      ],\n    },\n  },\n  decorators: [\n    (story) => {\n      return story();\n    },\n  ],\n  tags: ['autodocs'],\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BannerComponent>",
+                    "file": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StorybookIconComponent>",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TailwindIconComponent>",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ReusableIconComponent>",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PublishIconComponent>",
+                    "file": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "libs/shared/ui-components/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MockPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DismissalBehavior",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FeatureAnnouncement",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MaintenanceNotice",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PromotionalBanner",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SecurityAlert",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/banner/banner.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/all-icons.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargeRed",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/publish-icon/publish-icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargeBlue",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/reusable-icon/reusable-icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargePurple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/storybook-icon/storybook-icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargePurple",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/shared/ui-components/src/lib/components/icons/tailwind-icon/tailwind-icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
